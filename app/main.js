@@ -1,5 +1,6 @@
 const electron = require('electron');
 const path = require('path');
+const Bleacon = require('bleacon');
 
 const { app, BrowserWindow } = electron;
 
@@ -71,4 +72,13 @@ app.on('ready', () => {
 
   // the big red button, here we go
   window.loadURL(electronConfig.URL_LAUNCHER_URL);
+});
+
+/*
+ Beacon scan for all beacons around
+ */
+console.log("Start scanning for beacons!");
+Bleacon.startScanning();
+Bleacon.on('discover', function(bleacon) {
+  console.log(bleacon);
 });

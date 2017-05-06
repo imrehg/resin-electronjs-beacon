@@ -19,6 +19,7 @@
     "js"
   ],
   "dependencies": {
+    "bleacon": "^0.5.1",
     "electron": "^1.4.15",
     "electron-rebuild": "^1.5.7"
   },
